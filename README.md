@@ -38,13 +38,13 @@ This runs Cucumber features using Cucumber's JUnit Platform Engine. The `Suite`
 annotation on the `RunCucumberTest` class tells JUnit to kick off Cucumber.
 
 ```text
-[INFO] Running com.example.project.RunCucumberTest
+[INFO] Running mphillips.cukes.project.RunCucumberTest
 
 Scenario: a few cukes                 # classpath:com/example/project/belly.feature:3
-  ✔ Given I have 42 cukes in my belly # com.example.project.StepDefinitions.I_have_cukes_in_my_belly(int)
-  ↷ When I wait 1 hour                # com.example.project.StepDefinitions.i_wait_seconds(java.lang.Integer)
+  ✔ Given I have 42 cukes in my belly # mphillips.cukes.project.steps.StepDefinitions.I_have_cukes_in_my_belly(int)
+  ↷ When I wait 1 hour                # mphillips.cukes.project.steps.StepDefinitions.i_wait_seconds(java.lang.Integer)
         org.opentest4j.TestAbortedException: TODO: Implement me
-                at com.example.project.StepDefinitions.i_wait_seconds(StepDefinitions.java:19)
+                at mphillips.cukes.project.steps.StepDefinitions.i_wait_seconds(StepDefinitions.java:19)
                 at ✽.I wait 1 hour(classpath:com/example/project/belly.feature:5)
   ↷ Then my belly should growl
 ```

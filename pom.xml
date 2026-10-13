@@ -3,10 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.cucumber</groupId>
-    <artifactId>cucumber-jvm-starter-maven-java</artifactId>
+    <artifactId>mphillips-cuckes-project</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
-    <name>Cucumber-JVM: Starter with Maven and Java</name>
+    <name>Starter Cucumber tests with Maven and Java</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -63,6 +63,7 @@
             <artifactId>assertj-core</artifactId>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>
