@@ -10,5 +10,6 @@
 # Maven
 target/
 *.versionsBackup
+.mvn
 
 local.properties
