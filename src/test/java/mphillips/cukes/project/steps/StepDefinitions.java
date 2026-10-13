@@ -3,7 +3,6 @@ package mphillips.cukes.project.steps;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import mphillips.cukes.project.Belly;
 import mphillips.cukes.project.support.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -11,10 +10,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class StepDefinitions {
     @Given("I have {int} cukes in my belly")
     public void I_have_cukes_in_my_belly(int cukes) {
-        Belly belly = new Belly();
-        belly.eat(cukes);
-
-        System.out.printf(Test.env.getProperty("username"));
+        System.out.println("Count = " + cukes);
+        System.out.println(Test.env.getProperty("username"));
     }
 
     @When("^I wait (\\d+) seconds?$")

@@ -11,7 +11,7 @@ public class Hooks {
 
 
     @BeforeAll()
-    public void beforeAllHook(Scenario scenario){
+    public static void beforeAllHook(){
         Test.SetupEnv();
     }
 
