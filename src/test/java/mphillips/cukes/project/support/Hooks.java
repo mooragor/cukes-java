@@ -1,6 +1,10 @@
 package mphillips.cukes.project.support;
 
 import io.cucumber.java.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+import java.io.File;
 
 public class Hooks {
 
@@ -15,13 +19,25 @@ public class Hooks {
         Test.SetupEnv();
     }
 
+    @AfterAll()
+    public static void afterAllHook(){
+        Test.teardownWebDriver();
+    }
+
     @Before()
     public void beforeScenarioHook(Scenario scenario){
+        Test.setupWebDriver();
     }
 
     @After
     public void afterScenarioHook(Scenario scenario){
-        // scenario.log("After Scenario hook");
+        if (!scenario.isFailed())
+        {
+            File scrFile = ((TakesScreenshot)Test.driver).getScreenshotAs(OutputType.FILE);
+            Test.log.debug(scrFile.getAbsolutePath());
+
+        }
+        Test.teardownWebDriver();
     }
 
     @BeforeStep

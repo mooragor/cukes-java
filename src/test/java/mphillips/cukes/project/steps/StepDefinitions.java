@@ -8,10 +8,15 @@ import mphillips.cukes.project.support.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class StepDefinitions {
-    @Given("I have {int} cukes in my belly")
-    public void I_have_cukes_in_my_belly(int cukes) {
-        System.out.println("Count = " + cukes);
-        System.out.println(Test.env.getProperty("username"));
+    @Given("I visit {string}")
+    public void i_visit_url(String url) {
+        Test.driver.get(url);
+    }
+
+    @Given("I have {int} things")
+    public void i_have_things(int cukes) {
+        Test.log.debug("Count = " + cukes);
+        Test.log.debug(Test.env.getProperty("username"));
     }
 
     @When("^I wait (\\d+) seconds?$")
@@ -23,11 +28,10 @@ public class StepDefinitions {
         }
     }
 
-    @When("my belly should {word}")
-    public void my_belly_should(String word) {
+    @When("I should have {int} things")
+    public void i_should_have_things(int count) {
         // fine
     }
-
 
 
 }
